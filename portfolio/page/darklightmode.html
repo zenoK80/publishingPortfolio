@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="ex1.css">
+  <title>scss</title>
+  <style>
+    * {
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background: #eee;
+}
+
+section .btn {
+  text-align: center;
+  padding-bottom: 20px;
+}
+section .btn button {
+  padding: 10px;
+  margin: 10px;
+}
+
+.wrap {
+  width: 100%;
+  border: 2px solid #bbb;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  perspective: 600px;
+  /* item end */
+}
+.wrap .item {
+  width: 300px;
+  padding: 30px;
+  background: #fff;
+  margin: 50px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+.wrap .item h2 {
+  font-size: 30px;
+  font-family: arial;
+  color: #333;
+  margin-bottom: 15px;
+  color: #333;
+}
+.wrap .item p {
+  font-size: 14px;
+  line-height: 1.3;
+  font-family: "arial";
+  color: #333;
+  margin-bottom: 20px;
+  height: 80px;
+  color: #333;
+}
+.wrap .item a {
+  font-size: 20px;
+  color: #333;
+}
+.wrap .item:hover {
+  background: #111;
+}
+.wrap .item:hover h2, .wrap .item:hover p, .wrap .item:hover a {
+  color: #fff;
+}
+.wrap:hover .item {
+  transform: translateY(0px) rotateY(0);
+  opacity: 1;
+}
+
+/* wrap end */
+
+/*# sourceMappingURL=ex1.css.map */
+
+  </style>
+</head>
+<body>
+  <section>
+    <h1>&nbsp;&nbsp;다크모드 라이트모드</h1>
+    <div class="btn">
+    <button class="dark" onclick="darkmode()">다크모드</button>
+    <button class="light" onclick="lightmode()">라이트모드</button>
+    </div>
+  </section>
+  <sction class="wrap">
+    <article class="item">
+      <h2>Sub Title</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus eos illum necessitatibus a molestiae ab!</p>
+      <a href="javascript:0">view</a>
+    </article>
+
+    <article class="item">
+      <h2>Sub Title</h2>
+      <p>Ad corporis eius nobis repudiandae esse aliquam excepturi ducimus harum voluptate! Labore dolor similique distinctio.</p>
+      <a href="javascript:0">view</a>
+    </article>
+
+    <article class="item">
+      <h2>Sub Title</h2>
+      <p>Sit libero, earum sint ducimus sunt eos quasi ratione nemo vitae sequi dolorum molestias quo?</p>
+      <a href="javascript:0">view</a>
+    </article>
+
+    <article class="item">
+      <h2>Sub Title</h2>
+      <p>Doloribus, modi alias nam temporibus voluptatem reprehenderit blanditiis neque iste itaque ratione recusandae doloremque quis.</p>
+      <a href="javascript:0">view</a>
+    </article>
+
+  </sction>
+</body>
+</html>
+
+<script>
+  function darkmode(){
+    document.querySelector(".dark").style.opacity = "0.5";
+    document.querySelector(".light").style.opacity = "1";
+  var items = document.querySelectorAll(".item");
+
+  for(item of items){
+    item.style.background = "#111"
+    var itemChild = item.childNodes;
+    for(i=1;i<=5;i+=2){
+      item.childNodes[i].style.color = "white";
+    }
+    
+    
+    
+  }
+}
+    function lightmode() {
+      document.querySelector(".light").style.opacity = "0.5";
+      document.querySelector(".dark").style.opacity = "1";
+      var items = document.querySelectorAll(".item");
+      for (item of items) {
+        item.style.background = "#fff"
+        var itemChild = item.childNodes;
+        for (i = 1; i <= 5; i += 2) {
+          item.childNodes[i].style.color = "black";
+        }
+      
+      }
+    }
+ 
+</script>

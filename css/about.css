@@ -1,0 +1,1039 @@
+@charset "utf-8";
+
+/* ==========================================================================
+   📄 Resume
+   ========================================================================== */
+.resume-main {
+  padding-bottom: var(--sp-9);
+}
+
+/* ==========================================================================
+   🦸 Hero
+   ========================================================================== */
+.resume-hero {
+  padding: clamp(60px, 10vh, 120px) 0 var(--sp-7);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.resume-hero-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--sp-7);
+  align-items: center;
+}
+
+.profile-pic {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  background: var(--bg-tertiary);
+  box-shadow: var(--shadow-md);
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.resume-tag {
+  display: inline-flex;
+  width: fit-content;
+  padding: 6px 12px;
+  background: var(--bg-tertiary);
+  border-radius: var(--r-full);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.resume-name {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  color: var(--text-primary);
+}
+
+.resume-name span { display: block; }
+
+.resume-name em {
+  font-style: normal;
+  color: var(--brand-primary);
+  transition: color var(--t-base);
+}
+
+.resume-tagline {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.resume-sub {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.profile-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: var(--sp-3);
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.profile-meta li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.profile-meta .material-symbols-outlined {
+  font-size: 17px;
+  color: var(--brand-primary);
+  transition: color var(--t-base);
+}
+
+.profile-meta a:hover {
+  color: var(--brand-primary);
+}
+
+/* ==========================================================================
+   📑 Section Common
+   ========================================================================== */
+.resume-section {
+  padding: var(--sp-7) 0;
+}
+
+.section-head-resume {
+  margin-bottom: var(--sp-5);
+  padding-bottom: var(--sp-3);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.section-head-resume .section-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-2);
+  display: block;
+}
+
+.section-head-resume h3 {
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   📅 Experience Timeline (위계 명확하게)
+   ========================================================================== */
+.section-desc-resume {
+  margin-top: var(--sp-2);
+  font-size: 14px;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+  letter-spacing: 0.03em;
+}
+
+.exp-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+/* === 회사 카드 === */
+.exp-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: all var(--t-base);
+}
+
+.exp-card:hover {
+  border-color: var(--border-default);
+  box-shadow: var(--shadow-sm);
+}
+
+.exp-card.current {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px var(--brand-soft);
+}
+
+/* === 헤더 (회사 정보) === */
+.exp-header {
+  padding: var(--sp-5) var(--sp-5) var(--sp-4);
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-primary);
+}
+
+.exp-card.current .exp-header {
+  background: var(--brand-soft);
+}
+
+.exp-status-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.exp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--text-primary);
+  color: white;
+  border-radius: var(--r-full);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.exp-card.current .exp-badge {
+  background: var(--brand-primary);
+}
+
+.exp-badge.previous {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+.exp-period-text {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.05em;
+}
+
+/* 회사명 — 1단계 (가장 큼) */
+.exp-company {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+/* 부서/직무 — 2단계 */
+.exp-role {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: var(--sp-3);
+}
+
+/* 회사 요약 */
+.exp-summary {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--bg-tertiary);
+  border-radius: var(--r-sm);
+  display: inline-block;
+}
+
+.exp-card.current .exp-summary {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* === 본문 === */
+.exp-content {
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+/* 카테고리 그룹 (Frontend, Publishing, Backend) */
+.exp-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+/* 카테고리 라벨 — 3단계 */
+.exp-group-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 6px 14px;
+  background: var(--brand-soft);
+  border: 1px solid var(--brand-primary);
+  border-radius: var(--r-full);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--brand-primary);
+  transition: all var(--t-base);
+}
+
+.exp-group-label::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--brand-primary);
+  border-radius: 50%;
+  transition: background var(--t-base);
+}
+
+/* 작업 리스트 */
+.exp-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  padding-left: var(--sp-3);
+  border-left: 2px solid var(--border-subtle);
+}
+
+.exp-tasks > li {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: var(--sp-3);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r-md);
+  transition: all var(--t-fast);
+}
+
+.exp-tasks > li:hover {
+  border-color: var(--brand-primary);
+  transform: translateX(2px);
+}
+
+/* 작업 제목 — 4단계 */
+.exp-tasks h6 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+}
+
+/* 작업 설명 */
+.exp-tasks p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* 기술 칩 */
+.task-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.task-tech li {
+  display: inline-block;
+  padding: 3px 9px;
+  background: var(--bg-tertiary);
+  border-radius: var(--r-full);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  transition: all var(--t-fast);
+}
+
+.exp-tasks > li:hover .task-tech li {
+  background: var(--brand-soft);
+  color: var(--brand-primary);
+}
+
+/* === 모바일 === */
+@media (max-width: 640px) {
+  .exp-header {
+    padding: var(--sp-4);
+  }
+
+  .exp-content {
+    padding: var(--sp-4);
+    gap: var(--sp-4);
+  }
+
+  .exp-company {
+    font-size: 22px;
+  }
+
+  .exp-tasks {
+    padding-left: var(--sp-2);
+  }
+
+  .exp-tasks > li {
+    padding: var(--sp-2) var(--sp-3);
+  }
+}
+/* ==========================================================================
+   💪 Skills
+   ========================================================================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--sp-3);
+}
+
+.skill-card {
+  padding: var(--sp-4);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r-lg);
+  transition: all var(--t-base);
+}
+
+.skill-card:hover {
+  border-color: var(--border-default);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.skill-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: var(--sp-3);
+  background: var(--brand-soft);
+  color: var(--brand-primary);
+  border-radius: var(--r-md);
+  transition: all var(--t-base);
+}
+
+.skill-icon.material-symbols-outlined {
+  font-size: 22px;
+}
+
+.skill-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: var(--sp-2);
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.skill-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.skill-card li {
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding-left: 14px;
+  position: relative;
+}
+
+.skill-card li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 5px;
+  height: 1px;
+  background: var(--brand-primary);
+  transition: background var(--t-base);
+}
+
+/* ==========================================================================
+   🏆 Certifications
+   ========================================================================== */
+.cert-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 8px;
+}
+
+.cert-list li {
+  display: flex;
+  align-items: center;
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r-md);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: all var(--t-fast);
+}
+
+.cert-list li::before {
+  content: '✓';
+  color: var(--brand-primary);
+  font-weight: 700;
+  margin-right: var(--sp-2);
+  transition: color var(--t-base);
+}
+
+.cert-list li:hover {
+  border-color: var(--brand-primary);
+  background: var(--brand-soft);
+}
+
+/* ==========================================================================
+   👋 About Cards
+   ========================================================================== */
+.about-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.about-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: all var(--t-fast);
+}
+
+.about-card:hover {
+  border-color: var(--border-default);
+}
+
+.about-card[open] {
+  border-color: var(--brand-primary);
+  background: var(--brand-soft);
+}
+
+.about-card summary {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+  cursor: pointer;
+  list-style: none;
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 700;
+  color: var(--text-primary);
+  user-select: none;
+}
+
+.about-card summary::-webkit-details-marker { display: none; }
+
+.card-num {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--brand-primary);
+  flex-shrink: 0;
+  transition: color var(--t-base);
+}
+
+.card-title { flex: 1; }
+
+.card-toggle {
+  font-size: 22px;
+  color: var(--text-tertiary);
+  transition: transform var(--t-base), color var(--t-base);
+  flex-shrink: 0;
+}
+
+.about-card[open] .card-toggle {
+  transform: rotate(45deg);
+  color: var(--brand-primary);
+}
+
+.card-body {
+  padding: 0 var(--sp-4) var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: var(--sp-4);
+}
+
+.card-body p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+.card-body strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.goal-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin-top: var(--sp-2);
+}
+
+.goal-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--sp-3);
+  background: var(--bg-primary);
+  border-left: 2px solid var(--brand-primary);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  transition: border-color var(--t-base);
+}
+
+.goal-list li strong {
+  font-size: 14px;
+  color: var(--brand-primary);
+  font-weight: 700;
+  transition: color var(--t-base);
+}
+
+.goal-list li span {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   📨 CTA
+   ========================================================================== */
+.resume-cta {
+  padding: var(--sp-7) 0 0;
+}
+
+.cta-box {
+  padding: var(--sp-7) var(--sp-5);
+  background: var(--brand-soft);
+  border-radius: var(--r-xl);
+  text-align: center;
+  transition: background var(--t-base);
+}
+
+.cta-box h3 {
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 700;
+  margin-bottom: var(--sp-2);
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+}
+
+.cta-box p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: var(--sp-4);
+}
+
+.cta-actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-2);
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--r-full);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all var(--t-fast);
+}
+
+.btn-primary {
+  background: var(--brand-primary);
+  color: white;
+  transition: all var(--t-fast), background var(--t-base);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: var(--text-primary);
+}
+
+.btn-secondary {
+  background: white;
+  border: 1px solid var(--border-default);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+}
+
+.btn-primary .material-symbols-outlined,
+.btn-secondary .material-symbols-outlined {
+  font-size: 16px;
+}
+
+/* ==========================================================================
+   📅 Experience — 텍스트만 정리 (간격, 위계, 굵기)
+   ========================================================================== */
+.section-desc-resume {
+  margin-top: var(--sp-2);
+  font-size: 14px;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+  letter-spacing: 0.03em;
+}
+
+.exp-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-7);   /* 회사 사이 간격 더 크게 */
+  list-style: none;
+  padding: 0;
+}
+
+.exp-item {
+  display: block;     /* 박스/그리드 제거 */
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+/* === 상단: 기간 + 재직중 === */
+.exp-period {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-2);
+}
+
+.exp-date {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.04em;
+}
+
+.exp-status {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.04em;
+}
+
+.exp-item.current .exp-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 9px;
+  background: var(--brand-primary);
+  color: white;
+  font-weight: 600;
+  border-radius: var(--r-full);
+}
+
+/* === 회사명 (1순위) === */
+.exp-company {
+  font-size: 24px;          /* 가장 큼 */
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  margin-bottom: 2px;
+}
+
+.exp-role {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-tertiary);
+  margin-left: 2px;
+}
+
+/* === 회사 요약 (회색 칩) === */
+.exp-summary {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  background: var(--bg-tertiary);
+  padding: 5px 11px;
+  border-radius: var(--r-sm);
+  margin: var(--sp-3) 0 var(--sp-4);
+  letter-spacing: 0.01em;
+}
+
+/* === 카테고리별 그룹 사이 간격 === */
+.exp-detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);    /* Frontend - Publishing - Backend 간격 */
+}
+
+/* === Frontend / Publishing / Backend 라벨 (3순위 강조) === */
+.exp-detail h5 {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;     /* 자간 충분히 벌림 */
+  color: var(--brand-primary);
+  margin-bottom: var(--sp-2);
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-subtle);
+  transition: color var(--t-base);
+}
+
+/* === 작업 리스트 === */
+.exp-detail ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;            /* 작업 사이 간격 */
+  list-style: none;
+  padding: 0;
+}
+
+.exp-detail li {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.75;    /* 줄간격 여유롭게 */
+  padding: 0;
+}
+
+/* 작업 제목 — 굵게 + 검정 */
+.exp-detail li strong {
+  display: inline;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 14px;     /* 본문보다 살짝 큼 */
+  letter-spacing: -0.005em;
+}
+
+/* 기술 스택 — 모노 + 회색 + 작게 + 띄어쓰기 */
+.exp-detail li em {
+  display: inline-block;
+  margin-left: 6px;
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.02em;
+  font-weight: 400;
+}
+
+/* === 모바일 === */
+@media (max-width: 640px) {
+  .exp-company {
+    font-size: 20px;
+  }
+
+  .exp-detail li {
+    font-size: 13px;
+  }
+
+  .exp-detail li strong {
+    font-size: 13.5px;
+  }
+}
+
+/* ==========================================================================
+   🎓 Education List
+   ========================================================================== */
+.edu-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  list-style: none;
+  padding: 0;
+}
+
+.edu-list li {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: var(--sp-4);
+  padding: var(--sp-2) 0;
+  border-bottom: 1px solid var(--border-subtle);
+  background: transparent;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  transition: none;
+}
+
+.edu-list li:last-child {
+  border-bottom: none;
+}
+
+.edu-list li:hover {
+  border-color: var(--border-subtle);
+}
+
+.edu-period {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.03em;
+  align-self: center;
+}
+
+.edu-list li > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.edu-list li strong {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.edu-list li span {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   🏆 Cert Row + Year
+   ========================================================================== */
+.cert-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.cert-year {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.05em;
+}
+
+/* === 그 외 자격증 (접힘) === */
+.cert-extra {
+  margin-top: var(--sp-3);
+}
+
+.cert-extra summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 14px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r-full);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: all var(--t-fast);
+}
+
+.cert-extra summary::-webkit-details-marker { display: none; }
+
+.cert-extra summary:hover {
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+}
+
+.cert-extra[open] .cert-list {
+  margin-top: var(--sp-3);
+}
+
+/* === 수상 (Award) === */
+.award {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-4);
+  padding: var(--sp-3) var(--sp-4);
+  /* background: var(--brand-soft); */
+  /* border: 1px solid var(--brand-primary); */
+  border-radius: var(--r-md);
+  transition: background var(--t-base);
+}
+
+.award .material-symbols-outlined {
+  font-size: 28px;
+  color: var(--brand-primary);
+  transition: color var(--t-base);
+}
+
+.award div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.award strong {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.award span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 640px) {
+  .edu-list li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+/* ==========================================================================
+   📱 Responsive
+   ========================================================================== */
+@media (max-width: 900px) {
+  .resume-hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .profile-pic {
+    max-width: 240px;
+    margin:0 auto;
+  }
+
+  .profile-info {
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-grid,
+  .cert-list {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card summary {
+    padding: var(--sp-3);
+    font-size: 16px;
+  }
+
+  .card-body {
+    padding: var(--sp-3);
+  }
+}

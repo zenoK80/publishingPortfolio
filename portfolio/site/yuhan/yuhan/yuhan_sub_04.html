@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>유한양행</title>
+    
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    
+    <link rel="shortcut icon" href="images/yuhan_favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="css/header_footer.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/yuhan_sub_04_style.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/yuhan_sub_04.js"></script>
+    <script src="js/yuhan.js"></script>
+    
+    
+   
+
+</head>
+<body>
+        
+    
+    <? include "yuhanheader.html" ?>  <!-- 여기까지 헤더 -->
+   
+        <div id="contents">
+            
+                <figure class="row_c">
+                    <div></div>
+                </figure>
+
+
+
+            <div class="section row_c">
+                
+                <nav class="leftmenu">
+                    <h2>투자정보</h2>
+                    <ul>
+                        <li><a  class="on" href="yuhan_sub_04.html">공시정보</a></li>    
+                        <li><a  href="yuhan_sub_04-1.html">재무정보</a></li>
+                        <li><a href="yuhan_sub_04-2.html">주식정보</a></li>
+                        <li><a href="yuhan_sub_04-3.html">기업지배구조</a></li>
+                        <li><a  href="yuhan_sub_04-4.html">IR자료실</a></li>
+                        <li><a href="yuhan_sub_04-5.html">ANNUAL REPORT</a></li>
+                    </ul>
+
+
+                </nav>
+               
+                <article >
+                    <div class="">
+                        <a href="yuhan.html">
+                            <img src="images/sub01/1x/baseline_home_black_24dp.png" alt="메인홈"> 
+                            <span>홈&nbsp;</span>
+                        </a>
+                            <span> > 투자정보 > 공시정보</span>
+                     </div>
+                    <div><h2>공시자료</h2></div>
+                    <div class="con">
+                        <form id="data" name="data" method="get">
+                            <ul>
+                                <li>
+                                    <label for="searb" class="label1">회사명</label>
+                                    <input type=text name="searb" id="searb">
+                                    <div>
+                                    <input type="checkbox" name="cb" id="cb" checked>
+                                    <label for="cb" class="label2">최종보고서</label>
+                                    <input type="submit" class="searchbtn" value ="검색">
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="" class="label3">기간</label>
+                                    <input type="date" class="date">
+                                    <span> - </span>
+                                    <input type="date" class="date">
+                                    <div>
+                                    <span class="bli ">1개월</span>
+                                    <span class="bli">6개월</span>
+                                    <span class="bli">1년</span>
+                                    <span class="bli">3년</span>
+                                    <span class="bli">5년</span>
+                                    <span class="bli">10년</span>
+                                    <select>
+                                        <option>기간더보기</li>
+                                        <option>20년전~10년전</option>
+                                        <option>DART개시~20년전</option>
+                                    </select>
+                                    
+                                    
+                                </li>
+                                <li>
+                                    <span>
+                                        <input type="checkbox" name="datac1" id="datac1">
+                                        <label for="datac1">정기공시</label>
+                                    </span>
+                                    
+                                    <span>
+                                        <input type="checkbox" name="datac2" id="datac2">
+                                        <label for="datac2">주요사항보고</label>
+                                    </span>
+                                    
+                                    <span>
+                                        <input type="checkbox" name="datac3" id="datac3">
+                                        <label for="datac3">발행공시</label>
+                                    </span>
+                                    
+                                    <span>
+                                        <input type="checkbox" name="datac4" id="datac4">
+                                        <label for="datac4">지분공시</label>
+                                    </span>
+                                    
+                                    <span>
+                                        <input type="checkbox" name="datac5" id="datac5">
+                                        <label for="datac5">정기공시</label>
+                                    </span>
+                                    
+                                    <span>
+                                        <input type="checkbox" name="datac6" id="datac6">
+                                        <label for="datac6">기타공시</label>
+                                    </span>
+                                    
+                                    <span>
+                                        <input type="checkbox" name="datac7" id="datac7">
+                                        <label for="datac7">정기공시</label>
+                                    </span>
+                                    
+                                    <span>
+                                        <input type="checkbox" name="datac8" id="datac8">
+                                        <label for="datac8">외부감사관련</label>
+                                    </span>
+                                    
+                                    <span>
+                                        <input type="checkbox" name="datac9" id="datac9">
+                                        <label for="datac9">펀드공시</label>
+                                    </span>
+                                    
+                                    <span>
+                                        <input type="checkbox" name="datac10" id="datac10">
+                                        <label for="datac10">자산유동화</label>
+                                    </span>
+
+                                    <span>
+                                        <input type="checkbox" name="datac11" id="datac11">
+                                        <label for="datac11">거래소공시</label>
+                                    </span>
+
+                                    <span>
+                                        <input type="checkbox" name="datac12" id="datac12">
+                                        <label for="datac12">공정위공시</label>
+                                    </span>
+                                    
+                                </li>
+                             </ul>
+
+                        </form>
+
+                        <div>
+                            본 자료는 금융감독원 전자공시시스템 (https://dart.fss.or.kr)의 검색결과입니다.
+                        </div>
+
+                        <div class="div2">
+                            <div class="div2div">
+                                <span>조회건수</span>
+                                <select>
+                                    <option>15</option>
+                                    <option>30</option>
+                                    <option>50</option>
+                                    <option>100</option>
+                                </select>
+                            </div>
+                            <div>
+                                <span class=div2div2span1>접수일자</span>
+                                <span class=div2div2span>회사명</span>
+                                <span class=div2div2span>보고서명</span>
+
+                            </div>
+                        </div>
+
+
+<style type="text/css">
+table{
+    margin:10px 0;
+}
+.tg  { border-collapse:collapse;border-spacing:0;
+margin:0px auto;
+
+}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-yxec{color:#333;text-align:center;vertical-align:middle}
+.tg .tg-1hqs{background-color:#9FD9B4;color:#222;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+.tg .tg-bl6i{background-color:#F8F8F8;color:#333;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-7lxo{background-color:#EF9A87;color:#FFF;text-align:center;vertical-align:top}
+.tg .tg-stis{color:#333;text-align:center;vertical-align:top}
+.tg .tg-pbqq{background-color:#F7F7F7;color:#333;text-align:center;vertical-align:middle}
+.tg .tg-fzdk{background-color:#F7F7F7;color:#397FE7;text-align:center;vertical-align:top}
+.tg .tg-rq8i{color:#397FE7;text-align:center;vertical-align:top}
+.tg .tg-rkku{background-color:#F7F7F7;color:#333;text-align:center;vertical-align:top}
+
+
+
+</style>
+<table class="tg">
+
+<tbody>
+  <tr>
+    <td class="tg-bl6i">번호</td>
+    <td class="tg-bl6i">공시대상회사</td>
+    <td class="tg-bl6i">보고서명</td>
+    <td class="tg-bl6i">제출인</td>
+    <td class="tg-bl6i">접수일자</td>
+    <td class="tg-bl6i">비고</td>
+  </tr>
+  <tr>
+    <td class="tg-yxec"><span style="color:#333">1</span></td>
+    <td class="tg-7lxo"><span style="color:#FFF;background-color:#EF9A87">유</span> <span style="text-decoration:none;color:inherit;background-color:transparent">유한양행</span></td>
+    <td class="tg-stis"><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220729800433"><span style="text-decoration:none;color:#333;background-color:transparent">지속가능경영보고서등관련사항(자율공시)</span></a></td>
+    <td class="tg-yxec"><span style="color:#333">유한양행</span></td>
+    <td class="tg-yxec"><span style="color:#333">2022.07.29</span></td>
+    <td class="tg-1hqs"><span style="color:#222;background-color:#9FD9B4">유</span></td>
+  </tr>
+  <tr>
+    <td class="tg-pbqq"><span style="color:#333">2</span></td>
+    <td class="tg-7lxo"><span style="color:#FFF;background-color:#EF9A87">유</span> <span style="text-decoration:none;color:inherit;background-color:transparent">유한양행</span></td>
+    <td class="tg-fzdk"><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220728000241"><span style="color:#397FE7">[연장결정]</span></a><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220728000241"><span style="text-decoration:none;color:#333;background-color:transparent">주요사항보고서(자기주식취득신탁계약체결결정)</span></a></td>
+    <td class="tg-pbqq"><span style="color:#333">유한양행</span></td>
+    <td class="tg-pbqq"><span style="color:#333">2022.07.28</span></td>
+    <td class="tg-pbqq"></td>
+  </tr>
+  <tr>
+    <td class="tg-yxec"><span style="color:#333">3</span></td>
+    <td class="tg-7lxo"><span style="color:#FFF;background-color:#EF9A87">유</span> <span style="text-decoration:none;color:inherit;background-color:transparent">유한양행</span></td>
+    <td class="tg-rq8i"><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220728000224"><span style="color:#397FE7">[연장결정]</span></a><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220728000224"><span style="text-decoration:none;color:#333;background-color:transparent">주요사항보고서(자기주식취득신탁계약체결결정)</span></a></td>
+    <td class="tg-yxec"><span style="color:#333">유한양행</span></td>
+    <td class="tg-yxec"><span style="color:#333">2022.07.28</span></td>
+    <td class="tg-yxec"></td>
+  </tr>
+  <tr>
+    <td class="tg-pbqq"><span style="color:#333">4</span></td>
+    <td class="tg-7lxo"><span style="color:#FFF;background-color:#EF9A87">유</span> <span style="text-decoration:none;color:inherit;background-color:transparent">유한양행</span></td>
+    <td class="tg-fzdk"><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220728000202"><span style="color:#397FE7">[연장결정]</span></a><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220728000202"><span style="text-decoration:none;color:#333;background-color:transparent">주요사항보고서(자기주식취득신탁계약체결결정)</span></a></td>
+    <td class="tg-pbqq"><span style="color:#333">유한양행</span></td>
+    <td class="tg-pbqq"><span style="color:#333">2022.07.28</span></td>
+    <td class="tg-pbqq"></td>
+  </tr>
+  <tr>
+    <td class="tg-yxec"><span style="color:#333">5</span></td>
+    <td class="tg-7lxo"><span style="color:#FFF;background-color:#EF9A87">유</span> <span style="text-decoration:none;color:inherit;background-color:transparent">유한양행</span></td>
+    <td class="tg-rq8i"><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220728000197"><span style="color:#397FE7">[연장결정]</span></a><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220728000197"><span style="text-decoration:none;color:#333;background-color:transparent">주요사항보고서(자기주식취득신탁계약체결결정)</span></a></td>
+    <td class="tg-yxec"><span style="color:#333">유한양행</span></td>
+    <td class="tg-yxec"><span style="color:#333">2022.07.28</span></td>
+    <td class="tg-yxec"></td>
+  </tr>
+  <tr>
+    <td class="tg-pbqq"><span style="color:#333">6</span></td>
+    <td class="tg-7lxo"><span style="color:#FFF;background-color:#EF9A87">유</span> <span style="text-decoration:none;color:inherit;background-color:transparent">유한양행</span></td>
+    <td class="tg-fzdk"><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220728000191"><span style="color:#397FE7">[연장결정]</span></a><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220728000191"><span style="text-decoration:none;color:#333;background-color:transparent">주요사항보고서(자기주식취득신탁계약체결결정)</span></a></td>
+    <td class="tg-pbqq"><span style="color:#333">유한양행</span></td>
+    <td class="tg-pbqq"><span style="color:#333">2022.07.28</span></td>
+    <td class="tg-pbqq"></td>
+  </tr>
+  <tr>
+    <td class="tg-yxec"><span style="color:#333">7</span></td>
+    <td class="tg-7lxo"><span style="color:#FFF;background-color:#EF9A87">유</span> <span style="text-decoration:none;color:inherit;background-color:transparent">유한양행</span></td>
+    <td class="tg-stis"><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220728800257"><span style="text-decoration:none;color:#333;background-color:transparent">영업(잠정)실적(공정공시)</span></a></td>
+    <td class="tg-yxec"><span style="color:#333">유한양행</span></td>
+    <td class="tg-yxec"><span style="color:#333">2022.07.28</span></td>
+    <td class="tg-1hqs"><span style="color:#222;background-color:#9FD9B4">유</span></td>
+  </tr>
+  <tr>
+    <td class="tg-pbqq"><span style="color:#333">8</span></td>
+    <td class="tg-7lxo"><span style="color:#FFF;background-color:#EF9A87">유</span> <span style="text-decoration:none;color:inherit;background-color:transparent">유한양행</span></td>
+    <td class="tg-fzdk"><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220728000167"><span style="color:#397FE7">[연장결정]</span></a><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220728000167"><span style="text-decoration:none;color:#333;background-color:transparent">주요사항보고서(자기주식취득신탁계약체결결정)</span></a></td>
+    <td class="tg-pbqq"><span style="color:#333">유한양행</span></td>
+    <td class="tg-pbqq"><span style="color:#333">2022.07.28</span></td>
+    <td class="tg-pbqq"></td>
+  </tr>
+  <tr>
+    <td class="tg-yxec"><span style="color:#333">9</span></td>
+    <td class="tg-7lxo"><span style="color:#FFF;background-color:#EF9A87">유</span> <span style="text-decoration:none;color:inherit;background-color:transparent">유한양행</span></td>
+    <td class="tg-rq8i"><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220728000161"><span style="color:#397FE7">[연장결정]</span></a><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220728000161"><span style="text-decoration:none;color:#333;background-color:transparent">주요사항보고서(자기주식취득신탁계약체결결정)</span></a></td>
+    <td class="tg-yxec"><span style="color:#333">유한양행</span></td>
+    <td class="tg-yxec"><span style="color:#333">2022.07.28</span></td>
+    <td class="tg-yxec"></td>
+  </tr>
+  <tr>
+    <td class="tg-pbqq"><span style="color:#333">10</span></td>
+    <td class="tg-7lxo"><span style="color:#FFF;background-color:#EF9A87">유</span> <span style="text-decoration:none;color:inherit;background-color:transparent">유한양행</span></td>
+    <td class="tg-fzdk"><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220728000147"><span style="color:#397FE7">[연장결정]</span></a><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220728000147"><span style="text-decoration:none;color:#333;background-color:transparent">주요사항보고서(자기주식취득신탁계약체결결정)</span></a></td>
+    <td class="tg-pbqq"><span style="color:#333">유한양행</span></td>
+    <td class="tg-pbqq"><span style="color:#333">2022.07.28</span></td>
+    <td class="tg-pbqq"></td>
+  </tr>
+  <tr>
+    <td class="tg-yxec"><span style="color:#333">11</span></td>
+    <td class="tg-7lxo"><span style="color:#FFF;background-color:#EF9A87">유</span> <span style="text-decoration:none;color:inherit;background-color:transparent">유한양행</span></td>
+    <td class="tg-rq8i"><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220728000140"><span style="color:#397FE7">[연장결정]</span></a><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220728000140"><span style="text-decoration:none;color:#333;background-color:transparent">주요사항보고서(자기주식취득신탁계약체결결정)</span></a></td>
+    <td class="tg-yxec"><span style="color:#333">유한양행</span></td>
+    <td class="tg-yxec"><span style="color:#333">2022.07.28</span></td>
+    <td class="tg-yxec"></td>
+  </tr>
+  <tr>
+    <td class="tg-pbqq"><span style="color:#333">12</span></td>
+    <td class="tg-7lxo"><span style="color:#FFF;background-color:#EF9A87">유</span> <span style="text-decoration:none;color:inherit;background-color:transparent">유한양행</span></td>
+    <td class="tg-fzdk"><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220728000123"><span style="color:#397FE7">[연장결정]</span></a><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220728000123"><span style="text-decoration:none;color:#333;background-color:transparent">주요사항보고서(자기주식취득신탁계약체결결정)</span></a></td>
+    <td class="tg-pbqq"><span style="color:#333">유한양행</span></td>
+    <td class="tg-pbqq"><span style="color:#333">2022.07.28</span></td>
+    <td class="tg-pbqq"></td>
+  </tr>
+  <tr>
+    <td class="tg-yxec"><span style="color:#333">13</span></td>
+    <td class="tg-7lxo"><span style="color:#FFF;background-color:#EF9A87">유</span> <span style="text-decoration:none;color:inherit;background-color:transparent">유한양행</span></td>
+    <td class="tg-stis"><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220727800492"><span style="text-decoration:none;color:#333;background-color:transparent">기업설명회(IR)개최(안내공시)</span></a></td>
+    <td class="tg-yxec"><span style="color:#333">유한양행</span></td>
+    <td class="tg-yxec"><span style="color:#333">2022.07.27</span></td>
+    <td class="tg-1hqs"><span style="color:#222;background-color:#9FD9B4">유</span></td>
+  </tr>
+  <tr>
+    <td class="tg-pbqq"><span style="color:#333">14</span></td>
+    <td class="tg-7lxo"><span style="color:#FFF;background-color:#EF9A87">유</span> <span style="text-decoration:none;color:inherit;background-color:transparent">유한양행</span></td>
+    <td class="tg-rkku"><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220707000112"><span style="text-decoration:none;color:#333;background-color:transparent">임원ㆍ주요주주특정증권등소유상황보고서</span></a></td>
+    <td class="tg-pbqq"><span style="color:#333">국민연금공단</span></td>
+    <td class="tg-pbqq"><span style="color:#333">2022.07.07</span></td>
+    <td class="tg-pbqq"></td>
+  </tr>
+  <tr>
+    <td class="tg-yxec"><span style="color:#333">15</span></td>
+    <td class="tg-7lxo"><span style="color:#FFF;background-color:#EF9A87">유</span> <span style="text-decoration:none;color:inherit;background-color:transparent">유한양행</span></td>
+    <td class="tg-stis"><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220613000127"><span style="text-decoration:none;color:#333;background-color:transparent">임원ㆍ주요주주특정증권등소유상황보고서</span></a></td>
+    <td class="tg-yxec"><span style="color:#333">이병만</span></td>
+    <td class="tg-yxec"><span style="color:#333">2022.06.13</span></td>
+    <td class="tg-0lax"></td>
+  </tr>
+</tbody>
+</table>
+
+<div class="num">
+    <span class="on">1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+</div>
+                        
+                        
+
+                    </div>
+
+        
+
+                <div ></div>
+
+                </article>
+            </div>
+        </div>
+    
+        
+        <? include "yuhanfooter.html" ?> 
+
+        
+
+
+        <!-- Swiper JS -->
+ <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+ <!-- Initialize Swiper -->
+ <script>
+   var swiper = new Swiper(".mySwiper", {
+    autoplay: {
+            delay: 4000, // 4초마다 슬라이드
+            disableOnInteraction: true, //버튼 제어시 멈춤
+        },
+     slidesPerView: 3,
+     spaceBetween: 30,
+     slidesPerGroup: 3,
+     loop: true,
+     loopFillGroupWithBlank: true,
+     pagination: {
+       el: ".swiper-pagination",
+       clickable: true,
+     },
+     navigation: {
+       nextEl: ".swiper-button-next",
+       prevEl: ".swiper-button-prev",
+     },
+   });
+ </script>
+    
+</body>
+
+ 
+</html>

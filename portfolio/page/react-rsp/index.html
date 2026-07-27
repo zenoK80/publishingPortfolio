@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rock · Paper · Scissors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
+<style>
+:root {
+  --bg-deep:     #0a0e27;
+  --bg-panel:    #1a1f3a;
+  --neon-yellow: #ffe600;
+  --neon-pink:   #ff2e93;
+  --neon-cyan:   #00f0ff;
+  --neon-green:  #39ff14;
+  --pixel-black: 4px 4px 0 #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  image-rendering: pixelated;
+}
+
+body {
+  background: var(--bg-deep);
+  font-family: 'Press Start 2P', monospace;
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.crt-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  z-index: 999;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 30px 16px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 46, 147, 0.15), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(0, 240, 255, 0.15), transparent 40%),
+    var(--bg-deep);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.header { text-align: center; }
+
+.title {
+  font-size: 28px;
+  color: var(--neon-yellow);
+  letter-spacing: 4px;
+  text-shadow:
+    3px 3px 0 var(--neon-pink),
+    6px 6px 0 rgba(0, 0, 0, 0.5);
+  animation: titleGlow 2s ease-in-out infinite alternate;
+  margin-bottom: 12px;
+}
+
+@keyframes titleGlow {
+  from { filter: brightness(1); }
+  to   { filter: brightness(1.4); }
+}
+
+.subtitle {
+  font-size: 10px;
+  color: var(--neon-cyan);
+  letter-spacing: 3px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%   { opacity: 1; }
+  51%, 100% { opacity: 0.3; }
+}
+
+.scoreboard {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.score-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 18px;
+  background: var(--bg-panel);
+  border: 3px solid currentColor;
+  box-shadow: var(--pixel-black);
+  min-width: 80px;
+}
+
+.score-label { font-size: 9px;  letter-spacing: 1px; }
+.score-value {
+  font-size: 18px;
+  font-family: 'VT323', monospace;
+}
+
+.win-score  { color: var(--neon-cyan); }
+.draw-score { color: var(--neon-green); }
+.lose-score { color: var(--neon-pink); }
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.vs-text {
+  font-size: 28px;
+  color: var(--neon-yellow);
+  text-shadow: 3px 3px 0 var(--neon-pink);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.2) rotate(-3deg); }
+}
+
+.box {
+  width: 260px;
+  background: var(--bg-panel);
+  border: 4px solid white;
+  box-shadow: var(--pixel-black);
+  padding: 16px;
+  transition: all 0.3s;
+}
+
+.box.win {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 30px var(--neon-cyan), var(--pixel-black);
+  animation: winFlash 0.5s ease-in-out 3;
+}
+
+.box.lose {
+  border-color: var(--neon-pink);
+  animation: loseShake 0.4s ease-in-out;
+}
+
+.box.draw {
+  border-color: var(--neon-green);
+}
+
+@keyframes winFlash {
+  0%, 100% { background: var(--bg-panel); }
+  50%      { background: rgba(0, 240, 255, 0.2); }
+}
+
+@keyframes loseShake {
+  0%, 100% { transform: translateX(0); }
+  25%      { transform: translateX(-10px); }
+  75%      { transform: translateX(10px); }
+}
+
+.box.rolling .img-wrap {
+  animation: rouletteShake 0.15s ease-in-out infinite;
+}
+
+@keyframes rouletteShake {
+  0%, 100% { transform: translateY(0)    rotate(0deg); }
+  25%      { transform: translateY(-8px) rotate(-3deg); }
+  75%      { transform: translateY(0)    rotate(3deg); }
+}
+
+.box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.3);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.player-tag {
+  font-size: 11px;
+  color: var(--neon-yellow);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--neon-green);
+  box-shadow: 0 0 8px var(--neon-green);
+  animation: blink 1s infinite;
+}
+
+.img-wrap {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px inset rgba(255, 255, 255, 0.2);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.item-emoji {
+  font-size: 130px;
+  line-height: 1;
+  filter: drop-shadow(0 0 10px rgba(255, 230, 0, 0.4));
+  user-select: none;
+  padding-bottom: 18%;
+}
+
+.placeholder {
+  font-size: 80px;
+  color: rgba(255, 255, 255, 0.2);
+  font-family: 'VT323', monospace;
+}
+
+.item-name {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+}
+
+.result-label {
+  font-size: 14px;
+  text-align: center;
+  height: 22px;
+  letter-spacing: 3px;
+}
+
+.box.win  .result-label { color: var(--neon-cyan); }
+.box.lose .result-label { color: var(--neon-pink); }
+.box.draw .result-label { color: var(--neon-green); }
+
+.result-banner {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-text {
+  font-size: 22px;
+  letter-spacing: 4px;
+  animation: resultPop 0.5s ease-out;
+}
+
+@keyframes resultPop {
+  0%   { transform: scale(0)   rotate(-10deg); opacity: 0; }
+  60%  { transform: scale(1.2) rotate(5deg); }
+  100% { transform: scale(1)   rotate(0);    opacity: 1; }
+}
+
+.result-text.win     { color: var(--neon-cyan);   text-shadow: 3px 3px 0 #000; }
+.result-text.lose    { color: var(--neon-pink);   text-shadow: 3px 3px 0 #000; }
+.result-text.draw    { color: var(--neon-green);  text-shadow: 3px 3px 0 #000; }
+.result-text.rolling { color: var(--neon-yellow); animation: blink 0.3s infinite; }
+
+.controls {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.game-btn {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  padding: 16px 22px;
+  background: var(--bg-panel);
+  color: var(--neon-yellow);
+  border: 3px solid var(--neon-yellow);
+  box-shadow: var(--pixel-black);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.1s;
+  min-width: 100px;
+}
+
+.game-btn:hover:not(:disabled) {
+  background: var(--neon-yellow);
+  color: var(--bg-deep);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #000;
+}
+
+.game-btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 #000;
+}
+
+.game-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-emoji { font-size: 28px; }
+.btn-label { font-size: 10px; }
+
+.reset-btn {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  padding: 10px 20px;
+  background: transparent;
+  color: var(--neon-pink);
+  border: 2px solid var(--neon-pink);
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+}
+
+.reset-btn:hover:not(:disabled) {
+  background: var(--neon-pink);
+  color: var(--bg-deep);
+}
+
+.reset-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.footer {
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 2px;
+  margin-top: 16px;
+  animation: blink 2s infinite;
+}
+
+@media (max-width: 768px) {
+  .title { font-size: 22px; letter-spacing: 2px; }
+  .vs-text { font-size: 24px; }
+  .main { gap: 20px; }
+  .box { width: 240px; }
+}
+
+@media (max-width: 600px) {
+  .main {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .vs-text { font-size: 22px; }
+  .box { width: 280px; }
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 20px 12px;
+    gap: 18px;
+  }
+  .title {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-shadow:
+      2px 2px 0 var(--neon-pink),
+      4px 4px 0 rgba(0, 0, 0, 0.5);
+  }
+  .subtitle { font-size: 8px; }
+  .scoreboard { gap: 8px; }
+  .score-item {
+    padding: 8px 12px;
+    min-width: 65px;
+  }
+  .score-label { font-size: 8px; }
+  .score-value { font-size: 14px; }
+  .main { gap: 12px; }
+  .vs-text { font-size: 18px; }
+  .box {
+    width: 95%;
+    max-width: 320px;
+    padding: 14px;
+  }
+  .img-wrap { height: 160px; }
+  .item-name { font-size: 10px; }
+  .result-label { font-size: 12px; }
+  .result-text {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  .controls {
+    gap: 10px;
+    width: 100%;
+    padding: 0 4px;
+  }
+  .game-btn {
+    min-width: 0;
+    flex: 1;
+    padding: 12px 6px;
+    font-size: 9px;
+  }
+  .btn-emoji { font-size: 26px; }
+  .btn-label { font-size: 8px; }
+  .reset-btn { font-size: 9px; padding: 8px 16px; }
+  .footer { font-size: 7px; }
+  .item-emoji { font-size: 100px; }
+}
+
+@media (max-width: 360px) {
+  .title { font-size: 12px; }
+  .box { width: 100%; padding: 10px; }
+  .img-wrap { height: 140px; }
+  .game-btn { padding: 10px 4px; }
+  .btn-emoji { font-size: 22px; }
+  .item-emoji { font-size: 80px; }
+}
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel" data-type="module">
+const { useState, useRef, useEffect } = React;
+
+const choice = {
+  rock:     { name: "Rock",     emoji: "✊" },
+  scissors: { name: "Scissors", emoji: "✌️" },
+  paper:    { name: "Paper",    emoji: "🖐️" }
+};
+
+function Box(props) {
+  let result;
+  if (props.title === "Computer" && props.result !== "DRAW" && props.result !== "") {
+    result = props.result === "WIN" ? "LOSE" : "WIN";
+  } else {
+    result = props.result;
+  }
+
+  const boxClass = [
+    'box',
+    result ? result.toLowerCase() : '',
+    props.isRolling ? 'rolling' : ''
+  ].join(' ');
+
+  return (
+    <div className={boxClass}>
+      <div className="box-header">
+        <span className="player-tag">{props.title}</span>
+        <span className="status-dot"></span>
+      </div>
+
+      <div className="img-wrap">
+        {props.item
+          ? <span className="item-emoji">{props.item.emoji}</span>
+          : <div className="placeholder">?</div>
+        }
+      </div>
+
+      <h2 className="item-name">
+        {props.item ? props.item.name : '---'}
+      </h2>
+
+      <h2 className="result-label">{result || ' '}</h2>
+    </div>
+  );
+}
+
+function RspPage() {
+  const [userSelect,     setUserSelect]     = useState(null);
+  const [computerSelect, setComputerSelect] = useState(null);
+  const [result,         setResult]         = useState("");
+  const [score,          setScore]          = useState({ win: 0, lose: 0, draw: 0 });
+  const [isRolling,      setIsRolling]      = useState(false);
+
+  const intervalRef = useRef(null);
+  const timeoutRef  = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+      if (timeoutRef.current)  clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
+  const clearAllTimers = () => {
+    if (intervalRef.current) { clearInterval(intervalRef.current); intervalRef.current = null; }
+    if (timeoutRef.current)  { clearTimeout(timeoutRef.current);   timeoutRef.current  = null; }
+  };
+
+  const randomChoice = () => {
+    const keys = Object.keys(choice);
+    return choice[keys[Math.floor(Math.random() * keys.length)]];
+  };
+
+  const play = (userChoice) => {
+    if (isRolling) return;
+
+    clearAllTimers();
+    setUserSelect(choice[userChoice]);
+    setResult("");
+    setIsRolling(true);
+
+    intervalRef.current = setInterval(() => {
+      setComputerSelect(randomChoice());
+    }, 80);
+
+    timeoutRef.current = setTimeout(() => {
+      clearAllTimers();
+      const finalComputer = randomChoice();
+      setComputerSelect(finalComputer);
+      const finalResult = judgement(choice[userChoice], finalComputer);
+      setResult(finalResult);
+      updateScore(finalResult);
+      setIsRolling(false);
+    }, 1000);
+  };
+
+  const judgement = (user, computer) => {
+    if (user === computer) return "DRAW";
+
+    if (
+      (user.name === "Scissors" && computer.name === "Paper")   ||
+      (user.name === "Paper"    && computer.name === "Rock")    ||
+      (user.name === "Rock"     && computer.name === "Scissors")
+    ) return "WIN";
+
+    return "LOSE";
+  };
+
+  const updateScore = (r) => {
+    setScore(prev => ({
+      ...prev,
+      win:  r === "WIN"  ? prev.win  + 1 : prev.win,
+      lose: r === "LOSE" ? prev.lose + 1 : prev.lose,
+      draw: r === "DRAW" ? prev.draw + 1 : prev.draw,
+    }));
+  };
+
+  const reset = () => {
+    if (isRolling) return;
+    clearAllTimers();
+    setUserSelect(null);
+    setComputerSelect(null);
+    setResult("");
+    setScore({ win: 0, lose: 0, draw: 0 });
+  };
+
+  return (
+    <div className="app">
+      <div className="crt-overlay"></div>
+
+      <header className="header">
+        <h1 className="title">ROCK · PAPER · SCISSORS</h1>
+        <p className="subtitle">★ INSERT COIN ★</p>
+      </header>
+
+      <div className="scoreboard">
+        <div className="score-item win-score">
+          <span className="score-label">WIN</span>
+          <span className="score-value">{String(score.win).padStart(2, '0')}</span>
+        </div>
+        <div className="score-item draw-score">
+          <span className="score-label">DRAW</span>
+          <span className="score-value">{String(score.draw).padStart(2, '0')}</span>
+        </div>
+        <div className="score-item lose-score">
+          <span className="score-label">LOSE</span>
+          <span className="score-value">{String(score.lose).padStart(2, '0')}</span>
+        </div>
+      </div>
+
+      <div className="main">
+        <Box title="Computer" item={computerSelect} result={result} isRolling={isRolling} />
+        <div className="vs-text">VS</div>
+        <Box title="You" item={userSelect} result={result} isRolling={false} />
+      </div>
+
+      <div className="result-banner">
+        {isRolling && <span className="result-text rolling">READY...</span>}
+        {!isRolling && result === "WIN"  && <span className="result-text win">★ YOU WIN ★</span>}
+        {!isRolling && result === "LOSE" && <span className="result-text lose">✗ YOU LOSE ✗</span>}
+        {!isRolling && result === "DRAW" && <span className="result-text draw">◆ DRAW ◆</span>}
+      </div>
+
+      <div className="controls">
+        <button className="game-btn" onClick={() => play("scissors")} disabled={isRolling}>
+          <span className="btn-emoji">✌️</span>
+          <span className="btn-label">가위</span>
+        </button>
+        <button className="game-btn" onClick={() => play("rock")} disabled={isRolling}>
+          <span className="btn-emoji">✊</span>
+          <span className="btn-label">바위</span>
+        </button>
+        <button className="game-btn" onClick={() => play("paper")} disabled={isRolling}>
+          <span className="btn-emoji">🖐️</span>
+          <span className="btn-label">보</span>
+        </button>
+      </div>
+
+      <button className="reset-btn" onClick={reset} disabled={isRolling}>
+        ↺ RESET
+      </button>
+
+      <footer className="footer">© 2026 PIXEL ARCADE BY ZENO</footer>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<RspPage />);
+</script>
+</body>
+</html>

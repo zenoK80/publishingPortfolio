@@ -1,0 +1,173 @@
+@charset "utf-8";
+
+/* 기본셋팅 */
+figure{
+    overflow: hidden;
+}
+
+
+figure div{
+    background: url("../images/sub01/sub_01_top.jpg");
+    height:300px;
+    background-position: 65%;
+    width:100%;
+    
+    
+}
+.leftmenu{
+    margin-right:30px;
+    width:220px;
+}
+
+.leftmenu h2{
+    font-size:1.5em;
+    width:220px;
+    text-align: center;
+    height:70px;
+    line-height: 70px;
+    border-bottom:1px solid #aaa;
+    
+}
+.leftmenu ul li a{
+    width:220px;
+    text-align: left;
+    height:50px;
+    line-height: 50px;
+    border-bottom:1px solid #aaa;
+    text-indent: 10px;
+    font-size:14px;
+}
+
+.leftmenu ul li a:hover{
+    background:#2ccc6c;
+    color:white;
+}
+
+.leftmenu ul li a.on{
+    background:#19773f;
+    color:white;
+}
+
+
+
+article{
+    width:70%;
+    margin-top:30px;
+}
+
+article >div:first-child{
+    display:flex;
+    justify-content: right;
+    margin-bottom:30px;
+    margin-right:60px;
+    color:#999;
+}
+
+article >div:first-child a{
+    color:#999;
+}
+
+
+
+
+
+article  h2{
+    font-size:2.5em;
+    margin-bottom:30px;
+    border-bottom:1px solid #000;
+    width:100%;
+    padding-bottom:10px;
+   
+}
+
+.section{
+    display:flex;
+    justify-content: space-between;
+}
+
+.section article{
+    flex-grow:1;
+    width:70%;
+}
+
+
+@media screen and (max-width:400px){
+    figure div{
+        background: url("../images/sub01/mobile_main.png") no-repeat center !important; 
+        background-size: 100% 200px !important;
+        height:200px !important;
+    }
+   
+}
+
+@media screen and (max-width:530px){
+    .con img{
+        display:none;
+    }
+
+    .text1, .text2, .text3{
+        height:auto !important;
+
+    }
+
+    .textwrap{
+        position: relative;
+    }
+
+    .textwrap h3::before{
+        content:'● ';
+      
+
+        
+    }
+
+}
+
+@media screen and (max-width:800px){
+
+    figure div{
+        
+        height:300px;
+        background-position: 70%;
+      
+       
+    }
+    
+
+    .leftmenu{
+        display:none;
+    }
+
+    article >div:first-child{
+        margin-right:0;
+    }
+
+    article >div:nth-child(2){
+        text-align: center;
+    }
+
+  
+}
+
+
+ /* 기본셋팅 */
+
+.con{
+    display:flex;
+}
+
+
+
+.textwrap h3{
+    font-size:14px;
+}
+
+.textwrap p{
+    font-size:12px;
+}
+.text1, .text2, .text3{
+    height:177px;
+    margin-top:5px;
+    
+   
+}

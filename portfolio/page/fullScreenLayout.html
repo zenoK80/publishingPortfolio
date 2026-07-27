@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FullScreenUi</title>
+  <script src="https://kit.fontawesome.com/37782c7a12.js" crossorigin="anonymous"></script><!-- 폰트어썸 -->
+
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Fredericka+the+Great&display=swap');/* 폰트 */
+  /* reset CSS */
+  *{ margin:0px;padding: 0;box-sizing: border-box;font-family: 'Architects Daughter', 'Fredericka the Great';}
+  ul,ol{list-style:none;}
+  a{text-decoration:none;}
+  body{background-color:#000;}
+  
+  /* contents */
+  header{width:100%;border-bottom:1px solid #aaa;display:flex;justify-content: space-between;padding:5vh 5vw;align-items:center;}
+  header h1{font:bold 24px/1 "Architects Daughter";color:#fff;}
+  header #gnb{display:flex;gap:0 20px;}
+  header #gnb li a{font:16/1 "Architects Daughter";color:#fff;letter-spacing: 1px;}
+  header .sns{display:flex;gap:0 10px;}
+  header .sns li a{font-size:16px;color:#fff;}
+  header .btnMenu{display:none;font-size: 24px;color: #fff;}
+
+  /* video */
+  header{position:absolute;top:0px;left:0px;z-index: 2;}
+  figure{width:100%;height:100vh;position: absolute;top:0;left:0;overflow:hidden;z-index: 1;}
+  figure video{width:100%;height:100%;object-fit:cover;}
+  figure .txt{position: absolute;left:6vw;top:50%;transform: translateY(-50%);}
+  figure .txt p{font:normal 8vw/1 "Fredericka the Great";color:white;}
+  figure .txt ul{display:flex;margin-top:30px;gap:10px;}
+  figure .txt ul li{margin-right:50px;}
+  figure .txt ul li i{font-size: 20px;color:#fff;padding-right:5px}
+  figure .txt ul li strong{font:14px/1 "arial";color:white;letter-spacing: 1px;}
+  footer{width:100%;position: absolute;bottom:0px;left:0px;font:12px/1 "arial";color:#ddd;letter-spacing: 2px;text-align: center;padding: 5vh 5vw;z-index: 2;}
+  /* 반응형 */
+  @media screen and (max-width:1023px){
+    header #gnb {display:none;}
+    header .sns {display:none;}
+    header .btnMenu{display:block;}
+    figure .txt p{font-size: 10vw;}
+  }
+  </style>
+
+</head>
+<body>
+  <header>
+    <h1>DCODELAB</h1>
+
+    <ul id="gnb"><!-- 전체 메뉴 이동 Global Navigation Bar의 약자 --> <!-- 서브 페이지 전용 Local Navigation Bar -->
+      <li><a href="javascript:0">Compnay</a></li>
+      <li><a href="javascript:0">Brand</a></li>
+      <li><a href="javascript:0">Gallery</a></li>
+      <li><a href="javascript:0">Community</a></li>
+      <li><a href="javascript:0">News</a></li>
+      <li><a href="javascript:0">Location</a></li>
+    </ul>
+
+    <ul class="sns">
+      <li><a href="javascript:0"><i class="fas fa-search"></i></a></li>
+      <li><a href="javascript:0"><i class="fa far fa-envelope"></i></a></li>
+      <li><a href="javascript:0"><i class="fa fa-facebook-square"></i></a></li>
+    </ul>
+
+    <a href="javascript:0" class="btnMenu">
+      <i class="fa-solid fa-bars"></i>
+    </a>
+
+  </header>
+
+  <figure>
+    <video src="video.mp4" autoplay muted loop></video>
+    <article class="txt">
+      <p>UI/UX<br> DEVELOPMENT</p>
+
+      <ul>
+      <li><i class="fa-brands fa-playstation"></i><strong>Play This</strong></li>
+      <li><i class="fa-solid fa-heart"></i><strong>Favorite item</strong></li>
+      </ul>
+    </article>
+
+    
+  </figure>
+
+  <footer>2023 DCODELAB &copy; ALL RIGHTS RESERVED.</footer>
+</body>
+</html>

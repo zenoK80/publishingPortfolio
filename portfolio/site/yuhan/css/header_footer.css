@@ -1,0 +1,474 @@
+@charset "utf-8";
+
+/* 헤더부분 */
+.row_c {
+    max-width: 1300px;
+    margin: 0px auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+
+}
+
+header {
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: white ;
+    z-index: 1000;
+
+
+}
+
+
+
+
+#headerwrap {
+    display: flex;
+
+
+
+}
+
+
+#logo {
+    width: 200px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+#mobile_menu {
+    display: none;
+}
+
+
+
+
+/* 풋터부분 */
+footer {}
+
+#bottom_navi {
+    display: flex;
+    justify-content: space-around;
+
+
+}
+
+#bottom_navi ul {
+    padding: 10px 30px;
+}
+
+#bottom_navi ul li {
+    padding: 5px 0;
+    text-align: center;
+}
+
+#bottom_navi ul li a {
+    font-size: 13px;
+}
+
+#adresslink ul {
+    display: flex;
+    position: relative;
+
+}
+
+#adresslink ul li {
+    padding: 0 10px;
+    position: relative;
+    text-align: center;
+
+}
+
+#adresslink ul li:first-child {
+    padding-left: 0;
+}
+
+#adresslink ul li a::after {
+    content: '';
+    height: 10px;
+    border-right: 1px solid white;
+    position: absolute;
+    top: 7px;
+    right: 0;
+
+
+
+}
+
+#adresslink ul li:last-child a::after {
+    border: none;
+}
+
+
+
+#adresslink ul li a {
+    font-size: 12px;
+    color: #ffffff;
+
+
+}
+
+#footer2 {
+    background: #333;
+    color: white;
+    padding: 25px 0;
+
+
+}
+
+#footer2 p {
+    font-size: 13px;
+
+    color: #c8c6c6;
+}
+
+
+
+#footer2 a {
+    color: white;
+}
+
+@media screen and (max-width:800px) {
+
+    /* 모바일 헤더 */
+    #headerwrap {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #logo {
+        width: 140px;
+        margin: 10px 0;
+        height: auto;
+
+    }
+
+    #logo img {
+        width: 100%;
+
+    }
+
+
+
+    #mobile_menu {
+        margin: 10px 0;
+        display: flex;
+        align-items: center
+    }
+
+    #mobile_menu span {
+        font-size: 30px;
+
+
+    }
+
+
+
+    #top_navi {
+        display: none;
+    }
+
+
+
+    .mb_navi {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        left: 0;
+        top: 0;
+        z-index: 10;
+        display: none;
+    }
+
+    .mb_mainnav {
+        height: 100%;
+        width: 100%;
+    }
+
+    .mb_mainnav>ul {
+        float: right;
+        width: 70%;
+        height: 100%;
+        background-color: white;
+
+
+    }
+
+    .mb_mainnav>ul>li>a {
+        background: rgb(15, 172, 25);
+        background: linear-gradient(90deg, rgba(15, 172, 25, 1) 0%, rgba(158, 207, 161, 1) 100%);
+        height: 50px;
+        line-height: 50px;
+        font-weight: bold;
+        color: white;
+
+        text-indent: 10px;
+
+    }
+
+
+
+    .mb_mainnav>ul>li>a.selected {}
+
+
+
+    .mb_mainnav ul>li>ul {
+        display: none;
+    }
+
+    .mb_mainnav ul>li>ul>li {
+        text-indent: 1em;
+        font-size: 14px;
+        height: 30px;
+        line-height: 30px;
+    }
+
+
+
+
+    .mb_close {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        cursor: pointer;
+        color: #fff;
+
+    }
+
+    /* 모바일 풋터 */
+    footer #bottom_navi {
+        display: none;
+
+    }
+
+
+    footer #footer2 ul {
+        flex-direction: column;
+        align-items: center;
+
+
+    }
+
+    footer #footer2 ul li {
+        padding: 10px 0;
+
+    }
+
+    #adresslink ul li a::after {
+        display: none;
+    }
+
+    #footer2wrap p {
+        text-align: center;
+        padding: 10px;
+        border-top: 1px solid #ccc;
+    }
+
+    .navbg {
+        display: none;
+    }
+
+    .line {
+        display: none;
+    }
+
+}
+
+/* 컴퓨터 헤더 */
+@media screen and (min-width:801px) {
+    .mb_navi {
+        display: none;
+    }
+
+    #top_navi {
+        margin-top: 10px;
+        margin-left: 20px;
+
+    }
+
+    #top_navi {
+        flex-grow: 1;
+    }
+
+    #mainnav {
+        display: flex;
+        text-align: center;
+
+    }
+
+
+    #mainnav>li {
+        width: 20%;
+        position: relative;
+    }
+
+    #mainnav>li>a {
+        height: 50px;
+        line-height: 50px;
+        font-weight: bold;
+    }
+
+    /*     #mainnav> li > .line::after{
+        content:'';
+        position: absolute;
+        width:60%;
+        left:50%;
+        transform: translateX(-50%);
+        height:4px;
+        box-sizing: border-box;
+        bottom:0;
+        background: rgba(0, 0, 0, 0.2);
+        display:none;
+    } */
+
+
+    #mainnav>li:hover>a::before {
+        content: '';
+        position: absolute;
+        width: 60%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 4px;
+        box-sizing: border-box;
+        bottom: 0;
+        z-index: 100;
+        background: rgb(2, 0, 36);
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(82, 145, 54, 1) 21%, rgba(80, 157, 96, 1) 44%, rgba(0, 212, 255, 1) 100%);
+
+        opacity: 1;
+
+
+    }
+
+    #mainnav>li>a::before {
+        content: '';
+        position: absolute;
+        width: 60%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 4px;
+        box-sizing: border-box;
+        bottom: 0;
+
+        background: rgba(0, 0, 0, 0.2);
+
+        transition: 4s linear;
+        opacity: 0;
+
+
+    }
+
+    #mainnav>li>ul>li a {
+        font-size: 13px;
+        display: block;
+
+
+    }
+
+
+
+
+    #mainnav>li {
+        position: relative;
+    }
+
+    #mainnav .subnav {
+        background-color: white;
+        height: 340px;
+        display: none;
+        position: absolute;
+        width: 100%;
+
+
+        box-sizing: border-box;
+        z-index: 1000;
+
+
+
+
+
+
+    }
+
+
+
+    .subnav li:hover a {
+        color: #2ccc6c;
+
+    }
+
+
+
+
+    .subnav li {
+        padding: 5px;
+
+
+    }
+
+    .navbg {
+        width: 100%;
+        height: 340px;
+        top: 0;
+        display: none;
+    }
+
+    .nav_row {
+        height: 100%;
+    }
+
+    .navwrap {
+        position: relative;
+        height: 100%;
+        width: 236px;
+        overflow: hidden;
+
+    }
+
+
+
+
+    .navbg ul li {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        box-shadow: 20px -20px 20px #ccc;
+
+
+    }
+
+    .navbg ul li img {
+        max-width: 196px;
+        width: 100%;
+    }
+
+    .navbg1 {
+        width: 196px;
+        left: 10px;
+
+
+    }
+
+    .navbg2,
+    .navbg3,
+    .navbg4 {
+        width: 196px;
+        left: 236px;
+    }
+
+    #adresslink {
+        padding: 20px;
+
+    }
+
+    #footer2wrap {
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+}

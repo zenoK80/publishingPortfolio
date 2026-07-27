@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex"><!-- 검색 안되게 하는것 -->
+
+    <title>site1 유한양행 리뉴얼 포트폴리오</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="dist/css/swiper.min.css">
+    <link rel="stylesheet" href="css/yuhan_style.css" type="text/css">
+    <link rel="stylesheet" href="css/header_footer.css" type="text/css">
+    <link rel="shortcut icon" href="images/yuhan_favicon.png">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/yuhan.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="JS/today_close.js"></script>
+
+
+
+
+    <style>
+        .swiper-button-prev,
+        .swiper-container-rtl .swiper-button-next {
+            background: none;
+        }
+
+        .swiper-button-next,
+        .swiper-container-rtl .swiper-button-prev {
+            background: none;
+
+        }
+
+        .material-symbols-outlined {
+            font-size: 35px;
+        }
+
+        .swiper-container-horizontal>.swiper-pagination-progressbar,
+        .swiper-container-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+            width: 20%;
+            height: 4px;
+            left: 8%;
+            top: auto;
+            bottom: 10%;
+        }
+
+        .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+            background-color: white;
+        }
+
+        .swiper-container-horizontal>.swiper-pagination-bullets,
+        .swiper-pagination-custom,
+        .swiper-pagination-fraction {
+            bottom: 50px;
+        }
+
+        .swiper-container {
+            position: relative;
+        }
+
+        .spage1-2 {
+            position: absolute;
+            left: 29%;
+            top: auto;
+            bottom: 9%;
+            z-index: 100;
+            color: white;
+            font-size: 19px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <div id="headerwrap" class="row_c">
+
+            <div id="logo">
+                <a href="yuhan.html"> <img src="images/uhan_logo.jpg" alt="유한양행"></a>
+            </div>
+            <!-- 모바일 네비 -->
+
+            <div id="mobile_menu">
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+            </div>
+
+            <!-- 모바일 복제 -->
+            <div class="mb_navi">
+                <div class="mb_close"><span class="material-symbols-outlined">
+                        close
+                    </span></div>
+                <div class="mb_mainnav">
+                    <!-- 모바일 복제 -->
+
+                </div>
+            </div>
+
+
+
+
+
+            <!-- pc네비 -->
+            <nav id="top_navi">
+                <ul id="mainnav">
+                    <li><a href="#">소개</a>
+                        <ul class="subnav">
+                            <li><a href="yuhan_sub_01.html">회사개요</a></li>
+                            <li><a href="#">CEO메시지</a></li>
+                            <li><a href="#">회사연혁</a></li>
+                            <li><a href="#">기업이념</a></li>
+                            <li><a href="#">부패방지 및 컴플라이언스 방지</a></li>
+                            <li><a href="#">경영정보</a></li>
+                            <li><a href="#">사업분야</a></li>
+                            <li><a href="#">홍보</a></li>
+                            <li><a href="#">가족회사</a></li>
+                            <li><a href="#">오시는길</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">제품 정보</a>
+                        <ul class="subnav">
+                            <li><a href="yuhan_sub_02.html">제품정보</a>
+                            <li><a href="http://jinseong.pe.kr/xe/news">제품 소식</a></li>
+                            <li><a href="#">제품 외형별 검색</a></li>
+                            <li><a href="#">가정상비약</a></li>
+                            <li><a href="#">브랜드 이야기</a></li>
+                            <li><a href="#">약국찾기</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">연구 개발</a>
+                        <ul class="subnav">
+                            <li><a href="yuhan_sub_03.html">미션 & 비전</a></li>
+                            <li><a href="#">연구개발 전략</a></li>
+                            <li><a href="#">연구개발 활동</a></li>
+                            <li><a href="#">파이프라인</a></li>
+                            <li><a href="#">연구결과 발표</a></li>
+                            <li><a href="#">주요성과</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">투자 정보</a>
+                        <ul class="subnav">
+                            <li><a href="yuhan_sub_04.html">공시정보</a></li>
+                            <li><a href="#">재무정보</a></li>
+                            <li><a href="#">주식정보</a></li>
+                            <li><a href="#">기업지배구조</a></li>
+                            <li><a href="#">IR자료실</a></li>
+                            <li><a href="#">ANNUAL REPORT</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">CSR</a>
+                        <ul class="subnav">
+                            <li><a href="yuhan_sub_05.html">준법경영</a></li>
+                            <li><a href="#">사회공헌</a></li>
+                            <li><a href="#">환경·안전경영</a></li>
+                            <li><a href="#">지속가능경영보고서</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="navbg">
+            <div class="nav_row row_c">
+                <ul class="navwrap">
+                    <li class="navbg1"><img src="images/company_01.jpg" alt="company1"></li>
+                    <li class="navbg2"><img src="images/company_02.jpg" alt="company2"></li>
+                    <li class="navbg3"><img src="images/company_03.jpg" alt="company3"></li>
+                    <li class="navbg4"><img src="images/company_04.jpg" alt="company4"></li>
+                </ul>
+            </div>
+        </div>
+    </header> <!-- 여기까지 헤더 -->
+    <!-- 여기까지 헤더 -->
+
+    <div id="contents">
+        <div id="slidemain">
+            <!-- 스와이퍼 -->
+            <div class="swiper-container sw1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="images/main/main00.jpg" alt="메인1">
+                        <div class="text a">
+                            <p>Great & Global</p>
+                            <p><strong>유한양행</strong></p>
+                            <p>R&D를통한 가치창출</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide"><img src="images/main/main01.jpg" alt="메인1">
+                        <div class="text b">
+                            <p>Great & Global</p>
+                            <p><strong>유한양행</strong></p>
+                            <p>인류건강의 길을 앞서갑니다</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide"><img src="images/main/main02.jpg" alt="메인1">
+                        <div class="text c">
+                            <p>Great & Global</p>
+                            <p><strong>유한양행</strong></p>
+                            <p>인류건강을 위한 유한의 노력</p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Add Pagination -->
+
+                <div class="swiper-pagination spage1"></div>
+
+                <div class="spage1-2">
+                    <span class="cno">1</span><span> / </span><span class="tot">3</span>
+                </div>
+
+                <!-- Add Arrows -->
+                <div class="swiper-button-next snext1"></div>
+                <div class="swiper-button-prev sprev1"></div>
+            </div>
+
+            <div id="contentswrap" class="row_c">
+                <form id="searchframe" name="searchframe" method="get">
+                    <ul>
+                        <li><label for="search">제품검색하기</label></li>
+                        <li><input type="text" id="search" name="search" placeholder="제품명을 입력해 주세요">
+                            <input type="submit" value="검색" id="search_btn">
+                            <label for="search_btn"><span class="material-symbols-outlined search_icon">
+                                    search
+                                </span></label>
+                        </li>
+
+                    </ul>
+                </form>
+            </div>
+        </div>
+
+        <!-- 스와이퍼 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- 여기까지 슬라이드메뉴와 유일한박사 박물관 -->
+
+
+        <!--      스와이퍼      -->
+
+        <div id="menu">
+            <div id="swiper" class="row_c">
+                <div class="menu swiper-container sw2">
+                    <ul class="menu_list swiper-wrapper">
+                        <li class="swiper-slide" data-number="0">
+                            <a href="#"><img src="images/main/menu1.jpg" alt="메뉴1">
+                                <h4>유한 혈당케어 여주s52</h4>
+                                <p>식후 혈당상승 억제에 도움이 되며 높은 혈압감소에 도움을 줄 수 있습니다.</p>
+                            </a>
+                        </li>
+
+                        <li class="swiper-slide" data-number="1">
+                            <a href="#"><img src="images/main/menu2.jpg" alt="메뉴2">
+                                <h4>유한 코엔자임Q10</h4>
+                                <p>높은 혈압 감소에 도움을줄 수 있음</p>
+                            </a>
+                        </li>
+
+                        <li class="swiper-slide" data-number="2">
+                            <a href="#"><img src="images/main/menu3.jpg" alt="메뉴3">
+                                <h4>아이미루 콘택트퓨어</h4>
+                                <p>건조하고 피로한 눈을위한 아이미루 콘택트 퓨어</p>
+                            </a>
+                        </li class="swiper-slide">
+
+                        <li class="swiper-slide" data-number="3">
+                            <a href="#"><img src="images/main/menu4.jpg" alt="메뉴4">
+                                <h4>레코미드 서방정</h4>
+                                <p>건조하고 피로한 눈을위한 아이미루 콘택트 퓨어</p>
+                            </a>
+                        </li>
+
+                        <li class="swiper-slide" data-number="4">
+                            <a href="#"><img src="images/main/menu5.jpg" alt="메뉴5">
+                                <h4>쏘큐정</h4>
+                                <p>유한양행 프리미엄 소화제</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination spage2"></div>
+
+                </div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next snext2"><span class="material-symbols-outlined">arrow_forward_ios</span>
+                </div>
+                <div class="swiper-button-prev sprev2"><span class="material-symbols-outlined">arrow_back_ios</span>
+                </div>
+
+            </div><!-- 스와이퍼 -->
+
+            <div class="click">
+                <div class="frame1 ">
+                    <div class="frame1wrap">
+                        <div class="imgleftwrap">
+                            <div class="imgleft">
+                                <ul>
+                                    <li><img src="images/1.jpg " alt="1"></li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="textright">
+                            <h3>유한 혈당케어 여주S52</h3>
+                            <P>구분 : 건강기능식품 > 혈행개선</P>
+                            <P>효능군 : 당뇨</P>
+                            <P>성상 : 환</P>
+                            <P>주요성분 : 미숙여주주정추출분말, 해조분말, 쌀발효분말, 바나바잎추출물, 난소화성말토덱스트린, 귀리식이섬유, 치커리뿌리추출물분말, 상엽(뽕나무잎)추출물분말,
+                                양파추출분말,
+                                제주새싹보리분말 등</P>
+                        </div>
+                    </div>
+
+                    <div class="thumbnail">
+                        <div>
+                            <ul>
+                                <li><img src="images/1.jpg " alt="1"></li>
+                                <li><img src="images/1-1.png" alt="1-1"></li>
+                                <li><img src="images/1-2.png " alt="1-2"></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="closebtn">
+                        닫기
+                    </div>
+
+
+                </div>
+
+                <div class="frame1 ">
+                    <div class="frame1wrap">
+                        <div class="imgleftwrap">
+                            <div class="imgleft">
+                                <ul>
+                                    <li><img src="images/2.png" alt="2"></li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="textright">
+                            <h3>유한 코엔자임Q10</h3>
+                            <P>구분 : 건강기능식품 > 혈압</P>
+                            <P>효능군 : 높은 혈압 강하</P>
+                            <P>성상 : 고유의 향미가 있고 이미, 이취가 없는 주황색의 내용물을 함유한 어두운 갈색의 타원형 연질캡슐제</P>
+                            <P>주요성분 : 코엔자임Q10q10 100mg, 셀렌 16.5㎍, 비타민C 30mg, 비타민E 13mg</P>
+                        </div>
+                    </div>
+
+                    <div class="thumbnail">
+                        <div>
+                            <ul>
+                                <li><img src="images/2.png " alt="2"></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="closebtn">
+                        닫기
+                    </div>
+
+
+                </div>
+
+                <div class="frame1 ">
+                    <div class="frame1wrap">
+                        <div class="imgleftwrap">
+                            <div class="imgleft">
+                                <ul>
+                                    <li><img src="images/3.png" alt="3"></li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="textright">
+                            <h3>아이미르 콘텍트 퓨어</h3>
+                            <P>구분 : 일반의약품 > 점안제</P>
+                            <P>효능군 : 충혈, 결막염, 안검염, 다래끼</P>
+                            <P>성상 : 특이한 냄새가 있는 무색의 맑은 액이 연두색 투명한 플라스틱 용기에 든 점안액</P>
+                            <P>주요성분 : L-아스파르트산칼륨 10mg/ml, 타우린 10mg/ml, 콘트로이틴설페이트 나트륨 2.5mg/ml, 염화나트륨 3mg/ml</P>
+                        </div>
+                    </div>
+
+                    <div class="thumbnail">
+                        <div>
+                            <ul>
+                                <li><img src="images/3.png " alt="3"></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="closebtn">
+                        닫기
+                    </div>
+
+
+                </div>
+
+                <div class="frame1 ">
+                    <div class="frame1wrap">
+                        <div class="imgleftwrap">
+                            <div class="imgleft">
+                                <ul>
+                                    <li><img src="images/4.jpg" alt="4"></li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="textright">
+                            <h3>레코미드서방정 150밀리그램</h3>
+                            <P>구분 : 전문의약품 > 소화기관용약</P>
+                            <P>효능군 : [232]소화성궤양용제</P>
+                            <P>성상 : 흰색의 원형 서방정</P>
+                            <P>주요성분 : 레바미피드(JP) 150mg</P>
+                            <P>보험코드 : 642105650</P>
+                        </div>
+                    </div>
+
+                    <div class="thumbnail">
+                        <div>
+                            <ul>
+                                <li><img src="images/4.jpg " alt="4"></li>
+                                <li><img src="images/4-1.jpg" alt="4-1"></li>
+                                <li><img src="images/4-2.jpg" alt="4-2"></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="closebtn">
+                        닫기
+                    </div>
+
+
+                </div>
+
+                <div class="frame1 ">
+                    <div class="frame1wrap">
+                        <div class="imgleftwrap">
+                            <div class="imgleft">
+                                <ul>
+                                    <li><img src="images/5.jpg" alt="5"></li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="textright">
+                            <h3>쏘큐정</h3>
+                            <P>구분 : 일반의약품 > 소화기관용약</P>
+                            <P>효능군 : 소화제</P>
+                            <P>성상 : 연두색의 장방형 필름코팅정</P>
+                            <P>주요성분 : 1정 중 디아스타제·프로테아제·셀룰라제 50mg, 판크레아틴장용과립 100mg, dl-카르니틴염산염 100mg, UDCA 10mg, 시메티콘
+                                50mg, 티아민염산염 5mg</P>
+
+                        </div>
+                    </div>
+
+                    <div class="thumbnail">
+                        <div>
+                            <ul>
+                                <li><img src="images/5.jpg " alt="5"></li>
+                                <li><img src="images/5-1.jpg" alt="5-1"></li>
+                                <li><img src="images/5-2.jpg" alt="5-2"></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="closebtn">
+                        닫기
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+        <div id="newsroom">
+            <dv class="newswrap row_c">
+                <div class="newsleft">
+                    <div class="newsroom_text">
+
+                        <div class="news_text">
+                            <h2><i>NEWSROOM</i></h2>
+                            <i>
+                                <P><STRONG>유한양행</STRONG>에서 전하는 다양한 소식을 만나보세요</P>
+                            </i>
+                        </div>
+                    </div>
+
+                    <div class="news">
+                        <div class="nho">
+                            <ul>
+                                <li><Strong>유한양행, 엘레나 론칭해 '여성 유산군' 시장 진출</Strong> </li>
+                                <li><time datetime="2022-05-19">2022-05-19</time></li>
+                            </ul>
+
+                            <a href="#">원문기사 바로가기</a>
+                        </div>
+
+
+                        <div class="nho">
+                            <ul>
+                                <li><Strong>토종 폐암 신약 '렉라자' 글로벌 임상 순항</Strong> </li>
+                                <li><time datetime="2022-05-19">2022-05-19</time></li>
+                            </ul>
+                            <a href="#">원문기사 바로가기</a>
+                        </div>
+
+                        <div class="nho">
+                            <ul>
+                                <li><Strong>유한양행, 폐암치료제 美에 기술수출 성과..</Strong> </li>
+                                <li><time datetime="2022-05-19">2022-05-19</time></li>
+                            </ul>
+                            <a href="#">원문기사 바로가기</a>
+                        </div>
+
+
+                        <div class="nho">
+                            <ul>
+                                <li><Strong>유한양행 폐암 신약 '렉라자' 출시 1주년 기념식</Strong> </li>
+                                <li><time datetime="2022-05-19">2022-05-19</time></li>
+                            </ul>
+                            <a href="#">원문기사 바로가기</a>
+                        </div>
+
+
+                        <div class="nho">
+                            <ul>
+                                <li><Strong>바이오신약 연구 역량 강화, 글로벌 100년 기업 향해 뛴다.</Strong> </li>
+                                <li><time datetime="2022-05-19">2022-05-19</time></li>
+                            </ul>
+                            <a href="#">원문기사 바로가기</a>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="newsright">
+                    <div class="newsmovie"><iframe width="620" height="485"
+                            src="https://www.youtube.com/embed/Zr5oPPEhkXI" title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe></div>
+                    <div class="yuilhan"><a href="#"><img src="images/healthy.jpg" alt=uilhan></a></div>
+                </div>
+        </div>
+
+        <!--  -->
+        <div id="vision">
+            <div class="visionwrap row_c">
+                <div class="visionleft">
+                    <div class="vlefttext">
+                        <h2>YUHAN</h2>
+                        <P>모두의 건강과 행복이라는 큰 꿈을 가진 버드나무는</P>
+                        <P>지금도 국민과 함께 자라고 있습니다.</P>
+                    </div>
+                    <div class="vleftimg">
+                        <div class="vleftleftimg">
+                            <div><img src="images/company_0602.jpg" alt="c602"></div>
+                            <div><img src="images/company_0501.jpg" alt="c501"></div>
+                        </div>
+                        <div class="vlvlvl"><img src="images/company_0701.jpg" alt=""></div>
+                    </div>
+
+                </div>
+                <div class="visionright">
+                    <div class=vrightimg>
+                        <img src="images/w-main-q-2-bg.png" alt="w1">
+                        <img src="images/w-main-q-3-bg.png" alt="w2">
+                        <img src="images/w-main-q-4-bg.png" alt="w3">
+                    </div>
+
+                    <div class="vrighttext">
+                        <h2>Global</h2>
+                        <p>국내 1등을 넘어 글로벌 제약사로서의 길,</p>
+                        <p>인류 건강을 위한 그 길을 유한양행은</p>
+                        <p>큰 꿈을 갖고 걸어가려 합니다.</p>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+
+    <footer>
+
+
+
+
+
+
+
+
+        <div id="footer2">
+            <div id="footer2wrap" class="row_c">
+                <nav id="adresslink">
+                    <ul>
+                        <li><a href="#">사이트이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">영상정보처리기기 운영방침</a></li>
+                        <li><a href="#">이메일무단수집거부</a></li>
+                        <li><a href="#">스팸정팩</a></li>
+                        <li><a href="#">법적고지</a></li>
+                        <li><a href="#">사이트이용 도움말</a></li>
+                    </ul>
+                </nav>
+
+
+                <p>서울시 동작구 노량진로 74 ｜문의전화 02)828-0181｜FAX : 02)828-0050｜대표자: 조욱제｜사업자등록번호: 118-81-00601
+                    COPYRIGHT (C) YUHAN.ALL RIGHT RESERVED
+                </p>
+            </div>
+
+        </div><!-- footer2 -->
+
+
+
+    </footer>
+
+
+
+
+
+    </div>
+
+
+
+    <ul class="sidebar">
+        <li><a href="#slidemain">
+                <div></div> <span> 슬라이드</span>
+            </a></li>
+        <li><a href="#menu">
+                <div></div> <span> 제품정보</span>
+            </a></li>
+        <li><a href="#newsroom">
+                <div></div> <span> 뉴스룸</span>
+            </a></li>
+        <li><a href="#vision">
+                <div></div> <span> 비전&협력사</span>
+            </a></li>
+        <!--   <li><a href="#tal_empl">
+                <div></div> <span> 인재채용</span>
+            </a> </li>
+        <li><a href="#custm_center">
+                <div></div> <span> 고객센터</span>
+            </a></li> -->
+    </ul>
+
+
+
+</body>
+
+</html>
+<!-- Swiper JS -->
+<script src="dist/js/swiper.min.js"></script>
+
+<script>
+    var swiper = new Swiper('.sw1', {
+        slidesPerView: 1, //보여지는 슬라이드 개수
+        spaceBetween: 30, //슬라이드 사이 공간
+        loop: true,  // 반복 슬라이드
+        keyboard: {
+            enabled: true,  //키보드 제어
+        },
+        autoplay: {
+            delay: 4000, // 4초마다 슬라이드
+            disableOnInteraction: true, //버튼 제어시 멈춤
+        },
+        pagination: {
+            el: '.spage1',
+            clickable: true, //블릿버튼 제어
+            type: 'progressbar'
+        },
+
+        on: {
+            slideChange: function () {
+                $(".cno").text(this.realIndex + 1);
+            }
+        },
+
+        navigation: { //이전다음버튼 제어
+            nextEl: '.snext1',
+            prevEl: '.sprev1',
+        },
+    });
+
+    var swiper2 = new Swiper('.sw2', {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        slidesPerGroup: 1,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        // autoplay: {
+        //     delay: 4000,
+        // },
+        pagination: {
+            el: '.spage2',
+            clickable: true,
+
+        },
+        navigation: {
+            nextEl: '.snext2',
+
+            prevEl: '.sprev2',
+        },
+        /* 반응형 웹으로 슬라이드 개수 제어 */
+        breakpoints: {
+            1000: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+
+            },
+            500: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+
+            },
+
+
+
+
+
+        }
+
+
+    });
+
+    $(function () {
+        /*  $("#popup").animate({
+             top: '100px',
+             opacity: 1
+         }, 1000);
+ 
+         $(".pop_close").click(function () {
+             $("#popup").hide();
+         }); */
+
+
+        var news_top = $('#newsroom').offset().top - 600;
+
+        $(window).scroll(function () {
+            
+            var st = $(this).scrollTop();
+            if (st > news_top) {
+                $('.newswrap').addClass('active');
+            }
+
+
+                     
+      
+       
+        });
+
+        $(window).trigger("resize");
+        $(window).trigger("scroll");
+    });
+
+
+
+
+</script>
